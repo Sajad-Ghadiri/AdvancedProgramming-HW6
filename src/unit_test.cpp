@@ -55,7 +55,7 @@ TEST(HW6Test, TEST5) {
     EXPECT_EQ(patients[58].area_q, 9);
     EXPECT_EQ(patients[58].alkhol, 0);
 }
-/*
+
 TEST(HW6Test, TEST6) {
     std::vector<q2::Patient> patients = q2::read_file("lung_cancer.csv");
 
@@ -65,7 +65,7 @@ TEST(HW6Test, TEST6) {
     EXPECT_EQ(patients[30].name, "Jane Wyman");
     EXPECT_EQ(patients[58].name, "Joan Crawford");
 }
-
+/*
 TEST(HW6Test, TEST7) {
     auto flights = q3::gather_flights("flights.txt");
 

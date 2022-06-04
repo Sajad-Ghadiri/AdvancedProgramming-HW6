@@ -52,6 +52,11 @@ static std::vector<Patient> read_file(std::string filename)
 
 }
 
+static void sort(std::vector<Patient> &patients)
+{
+	std::sort(patients.begin() , patients.end() , [](Patient inp1 , Patient inp2){return (3*inp1.age + 5*inp1.smokes + 2*inp1.area_q + 4*inp1.alkhol) > (3*inp2.age + 5*inp2.smokes + 2*inp2.area_q + 4*inp2.alkhol) ;}) ;
+}
+
 
 
 }
