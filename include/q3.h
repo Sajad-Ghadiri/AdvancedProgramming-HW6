@@ -34,7 +34,8 @@ static std::priority_queue<Flight , std::vector<Flight> , decltype(compare_q3)> 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 static size_t duration_calculator(std::string flight_time)
-{
+    {
+        
     if(flight_time.empty()) {return 0;}
 
     std::regex pattern_duration(R"((\d+)\h(\d+)?\m?)");
