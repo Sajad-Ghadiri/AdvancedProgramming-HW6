@@ -12,10 +12,10 @@ double gradient_descent (T init_val , T step_size , Func func=Func{})
         T func_init_val {func(init)} ; // function value at starting point
 
         // derivative of function at calculating it at starting point
-        T derivative{step_size * ((func(init_val) - func(init_val - 0.001)) / 0.001)}; 
+        T derivative{step_size * ((func(init_val) - func(init_val - 0.00001)) / 0.00001)}; 
 
     //////////// while loop to converge the algorith and reach the minimum of function
-    while(std::abs(derivative) > 0.000001)
+    while(std::abs(derivative) > 0.00001)
     {
         //// where is the starting point is important 
         /// because we move forward ord backward depends on the sign of derivative
@@ -31,7 +31,7 @@ double gradient_descent (T init_val , T step_size , Func func=Func{})
         else { break ;}
 
         //// update the value of function at starting point
-        derivative = step_size * ((func(init) - func(init - 0.001)) / 0.001) ;
+        derivative = step_size * ((func(init) - func(init - 0.00001)) / 0.00001) ;
         func_init_val = func(init) ;
         
 
