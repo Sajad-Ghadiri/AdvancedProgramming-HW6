@@ -27,16 +27,11 @@ double gradient_descent (T init_val , T step_size , Func func=Func{})
         {
             init = init - step_size ;
         }
-
         else { break ;}
-
         //// update the value of function at starting point
         derivative = step_size * ((func(init) - func(init - 0.00001)) / 0.00001) ;
         func_init_val = func(init) ;
-        
-
     }
-
     return init ;
 }
 

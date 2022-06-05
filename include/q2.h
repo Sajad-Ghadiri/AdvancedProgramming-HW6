@@ -12,6 +12,13 @@ namespace q2
 
 struct Patient
 {
+	Patient(const std::string& _name, const std::string& _lastname, const size_t& _age, const size_t& _smokes, const size_t& _area_q, const size_t& _alkhol)
+        : name { _name + " " + _lastname }
+        , age { _age }
+        , smokes { _smokes }
+        , area_q { _area_q }
+        , alkhol { _alkhol }
+
 	std::string name;
 	size_t age;
 	size_t smokes;
@@ -52,14 +59,15 @@ static std::vector<Patient> read_file(std::string filename)
 		// erase the data of each row from txt
 		txt = match.suffix().str() ;
 	}
-
 	return patients ;
 
 }
 // function to calculate the probability of lung cancer by sorting the patients vector with README.md formula :)
 static void sort(std::vector<Patient> &patients)
 {
-	std::sort(patients.begin() , patients.end() , [](Patient inp1 , Patient inp2){return (3*inp1.age + 5*inp1.smokes + 2*inp1.area_q + 4*inp1.alkhol) > (3*inp2.age + 5*inp2.smokes + 2*inp2.area_q + 4*inp2.alkhol) ;}) ;
+	std::sort(patients.begin() , patients.end() , 
+	[](Patient inp1 , Patient inp2)
+	{return (3*inp1.age + 5*inp1.smokes + 2*inp1.area_q + 4*inp1.alkhol) > (3*inp2.age + 5*inp2.smokes + 2*inp2.area_q + 4*inp2.alkhol) ;}) ;
 }
 
 }
